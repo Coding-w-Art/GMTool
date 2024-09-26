@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="GMTool.View.FeedbackTool"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GMTool.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" NavigationCacheMode="Required">
+
+    <Grid Margin="20">
+        <InfoBar x:Name="ibInfo" Margin="0,20,0,0" IsOpen="False" IsIconVisible="True" VerticalAlignment="Top" Width="720" Height="48"></InfoBar>
+      <StackPanel Margin="0,100,0,0" Orientation="Vertical" Spacing="32" Width="720">
+            <ComboBox x:Name="cbCatagory" Header="反馈类别：" PlaceholderText="请选择..." Width="200" HorizontalAlignment="Left">
+                <x:String>Bug 反馈</x:String>
+                <x:String>改进建议</x:String>
+                <x:String>添加功能</x:String>
+                <x:String>其他</x:String>
+            </ComboBox>
+            <TextBox x:Name="tbDetail" Header="详细描述：" PlaceholderText="畅所欲言..." Height="200" TextWrapping="Wrap"></TextBox>
+            <Button x:Name="btSubmit" Content="发送" Width="160" HorizontalAlignment="Center" Style="{StaticResource AccentButtonStyle}" Click="ButtonBase_OnClick"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

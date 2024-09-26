@@ -1,0 +1,58 @@
+<winUiEx:WindowEx
+    x:Class="GMTool.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GMTool"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winUiEx="using:WinUIEx"
+    Width="1200" Height="800"
+    MinWidth="1200" MinHeight="800"
+    Title="GM 命令工具"
+    mc:Ignorable="d" TaskBarIcon="Assets/GM.ico">
+
+  <Grid x:Name="gridRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      <Grid.RowDefinitions>
+          <RowDefinition x:Name="appTitleBarRow" Height="48"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
+      </Grid.RowDefinitions>
+      <Grid x:Name="AppTitleBar" Visibility="Collapsed" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="48" Background="Transparent">
+          <Image x:Name="TitleBarIcon" Width="16" Height="16" Margin="16,16,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+          <TextBlock x:Name="TitleBarName" Margin="40,16,0,0" Style="{StaticResource CaptionTextBlockStyle}" Text="GM 命令工具"/>
+      </Grid>
+
+    <NavigationView x:Name="navRoot" Grid.Row="1" IsTitleBarAutoPaddingEnabled="True" AlwaysShowHeader="False" PaneDisplayMode="Left" IsPaneOpen="False" CompactModeThresholdWidth="200" ExpandedModeThresholdWidth="600" OpenPaneLength="200" IsSettingsVisible="True" IsBackButtonVisible="Collapsed" IsBackEnabled="False" IsPaneToggleButtonVisible="True" SelectionChanged="NavRoot_OnSelectionChanged">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Name="navItemHomePage" Content="所有工具" Tag="GMTool.HomePage">
+              <NavigationViewItem.Icon>
+                  <FontIcon FontFamily="Assets/Segoe Fluent Icons.ttf#Segoe Fluent Icons" Glyph="&#xe80f;"/>
+              </NavigationViewItem.Icon>
+          </NavigationViewItem>
+      </NavigationView.MenuItems>
+      <NavigationView.FooterMenuItems>
+          <NavigationViewItem x:Name="navItemRecentUpdate" Content="最近更新" Tag="GMTool.RecentUpdate" SelectsOnInvoked="False" Tapped="NavItemRecentUpdate_OnTapped">
+              <NavigationViewItem.Icon>
+                  <FontIcon FontFamily="Assets/Segoe Fluent Icons.ttf#Segoe Fluent Icons" Glyph="&#xf133;"/>
+              </NavigationViewItem.Icon>
+              <NavigationViewItem.InfoBadge>
+                  <InfoBadge Background="#C42B1C" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="White" Value="-1" Style="{StaticResource AttentionValueInfoBadgeStyle}">
+                  </InfoBadge>
+              </NavigationViewItem.InfoBadge>
+          </NavigationViewItem>
+        <NavigationViewItem x:Name="navItemProfile" SelectsOnInvoked="False">
+          <!--<NavigationViewItem.Content>
+              <PersonPicture x:Name="ppProfile" Width="20" Height="20" Margin="2" HorizontalAlignment="Left"></PersonPicture>
+          </NavigationViewItem.Content>-->
+            <NavigationViewItem.Icon>
+              <FontIcon FontFamily="Assets/Segoe Fluent Icons.ttf#Segoe Fluent Icons" Glyph="&#xe77B;"/>
+          </NavigationViewItem.Icon>
+        </NavigationViewItem>
+      </NavigationView.FooterMenuItems>
+
+        <Frame x:Name="navContentFrame"/>
+    </NavigationView>
+
+      <TeachingTip Grid.Row="0" x:Name="tipRecentUpdate" IsLightDismissEnabled="False" IsOpen="False" Target="{x:Bind navItemRecentUpdate}" PreferredPlacement="RightTop" HeroContentPlacement="Bottom" Title="最近更新：" CloseButtonClick="TipRecentUpdate_OnCloseButtonClick">
+      </TeachingTip>
+  </Grid>
+</winUiEx:WindowEx>

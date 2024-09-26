@@ -1,0 +1,159 @@
+﻿<Page
+    x:Class="GMTool.LanguageSearchTool"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GMTool"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:primitives="using:CommunityToolkit.WinUI.UI.Controls.Primitives"
+    mc:Ignorable="d" NavigationCacheMode="Required">
+
+    <Grid>
+      <Grid.RowDefinitions>
+          <RowDefinition Height="140"></RowDefinition>
+        <RowDefinition Height="40"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+          <RowDefinition Height="20"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Grid Grid.Row="0" Margin="0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+              <ColumnDefinition Width="80"></ColumnDefinition>
+              <ColumnDefinition Width="3*"></ColumnDefinition>
+              <ColumnDefinition Width="160"></ColumnDefinition>
+              <ColumnDefinition Width="120"></ColumnDefinition>
+              <ColumnDefinition Width="*"></ColumnDefinition>
+          </Grid.ColumnDefinitions>
+          <TextBox x:ConnectionId='15' x:Name="tbQuery" Margin="8,0,8,60" Grid.Column="2" Header="输入查询关键字：" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"                                AcceptsReturn="False"></TextBox>
+        <Button x:ConnectionId='16' x:Name="btQuery" Margin="8,0,8,60" Grid.Column="3" Content="查询" Height="32" VerticalAlignment="Bottom" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Stretch"                        ></Button>
+        <Button x:ConnectionId='17' x:Name="btCheck" Margin="8,0,8,60" Grid.Column="4" Content="检查重复项" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"                        ></Button>
+          <StackPanel Grid.Column="2" Grid.ColumnSpan="3" Spacing="8" Margin="8,90,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock Text="高级搜索选项：" Height="22" VerticalAlignment="Center"></TextBlock>
+              <CheckBox x:ConnectionId='18' Content="区分大小写" IsChecked="False" VerticalAlignment="Center"                       ></CheckBox>
+              <CheckBox x:ConnectionId='19' Content="全字匹配" IsChecked="False" VerticalAlignment="Center"                            ></CheckBox>
+              <CheckBox x:ConnectionId='20' Content="搜索序号" IsChecked="True" VerticalAlignment="Center"                     ></CheckBox>
+              <CheckBox x:ConnectionId='21' Content="搜索内容" IsChecked="True" VerticalAlignment="Center"                          ></CheckBox>
+          </StackPanel>
+      </Grid>
+
+        <Grid Grid.Row="1" Height="32" Margin="20,0,20,0" Padding="12,0" CornerRadius="6,6,0,0" VerticalAlignment="Bottom" BorderThickness="1,1,1,0" BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}">
+          <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="200"></ColumnDefinition>
+              <ColumnDefinition Width="60"></ColumnDefinition>
+              <ColumnDefinition Width="1.5*"></ColumnDefinition>
+              <ColumnDefinition Width="*"></ColumnDefinition>
+              <ColumnDefinition Width="*"></ColumnDefinition>
+              <ColumnDefinition Width="40"></ColumnDefinition>
+              <ColumnDefinition Width="40"></ColumnDefinition>
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Column="0" Text="表格" Foreground="{ThemeResource SystemFillColorNeutralBrush}" VerticalAlignment="Center" Margin="10,0"></TextBlock>
+          <TextBlock Grid.Column="1" Text="行" Foreground="{ThemeResource SystemFillColorNeutralBrush}" VerticalAlignment="Center" HorizontalTextAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+          <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Text="序号/ID" Foreground="{ThemeResource SystemFillColorNeutralBrush}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
+          <TextBlock Grid.Column="3" Text="简中/zh-CN" Foreground="{ThemeResource SystemFillColorNeutralBrush}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
+          <TextBlock Grid.Column="4" Text="英文/en" Foreground="{ThemeResource SystemFillColorNeutralBrush}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
+
+            <Button Visibility="Collapsed" Grid.Column="6" HorizontalAlignment="Right" ToolTipService.ToolTip="选择多语言列" Width="20" Height="20" Padding="0" Margin="0">
+                <FontIcon FontFamily="Assets/Segoe Fluent Icons.ttf#Segoe Fluent Icons" Glyph="&#xe774;" FontSize="12" Foreground="{ThemeResource SystemFillColorNeutralBrush}"/>
+                <Button.Flyout>
+                    <MenuFlyout Placement="LeftEdgeAlignedTop">
+                        <ToggleMenuFlyoutItem Text="简中 - zh-CN" IsChecked="True"></ToggleMenuFlyoutItem>
+                        <ToggleMenuFlyoutItem Text="英文 - en" IsChecked="True"></ToggleMenuFlyoutItem>
+                        <ToggleMenuFlyoutItem Text="繁中 - zh-TW" IsChecked="True"></ToggleMenuFlyoutItem>
+                        <ToggleMenuFlyoutItem Text="葡语 - pt" IsChecked="False"></ToggleMenuFlyoutItem>
+                        <ToggleMenuFlyoutItem Text="法语 - fr" IsChecked="False"></ToggleMenuFlyoutItem>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+      </Grid>
+
+      <Grid Grid.Row="2" Margin="20,0,20,30">
+        <ListView x:ConnectionId='11' x:Name="lvResults" Visibility="Visible" ShowsScrollingPlaceholders="False" Padding="0,2" SelectionMode="Single" BorderThickness="1" CornerRadius="0,0,6,6" BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="48">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                            <ColumnDefinition Width="60"></ColumnDefinition>
+                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Path=FileName}" VerticalAlignment="Center" Margin="10,0"></TextBlock>
+                        <TextBlock Grid.Column="1" Text="{Binding Path=LineNo}" VerticalAlignment="Center" HorizontalTextAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" Spacing="2">
+                          <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center" Visibility="{Binding Path=OldTagVisibility}">
+                            <Button Width="24" Height="16" Margin="0,2,0,0" Padding="0" Content="OLD" IsEnabled="false" FontFamily="Assets/JetBrainsMono.ttf#JetBrains Mono" FontSize="10" VerticalAlignment="Center"></Button>
+                            <TextBlock Text="{Binding Path=ID}" ToolTipService.ToolTip="{Binding Path=ID}" IsTextSelectionEnabled="True" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"></TextBlock>
+                          </StackPanel>
+                          <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center" Visibility="{Binding Path=NewTagVisibility}">
+                            <Button Width="24" Height="16" Margin="0,2,0,0" Padding="0" Content="NEW" Style="{StaticResource AccentButtonStyle}" IsEnabled="false" FontFamily="Assets/JetBrainsMono.ttf#JetBrains Mono" FontSize="10" VerticalAlignment="Center"></Button>
+                            <TextBlock Text="{Binding Path=NewID}" ToolTipService.ToolTip="{Binding Path=NewID}" IsTextSelectionEnabled="True" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"></TextBlock>
+                          </StackPanel>
+                        </StackPanel>
+                        <TextBlock Grid.Column="3" Text="{Binding Path=zh_CN}" ToolTipService.ToolTip="{Binding Path=zh_CN}" IsTextSelectionEnabled="True" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" Margin="10"></TextBlock>
+                        <TextBlock Grid.Column="4" Text="{Binding Path=en}" ToolTipService.ToolTip="{Binding Path=en}" IsTextSelectionEnabled="True" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" Margin="10"></TextBlock>
+                        <HyperlinkButton x:ConnectionId='13' Grid.Column="5" Tag="{Binding Path=Index}" Content="&#xe8a7;" ToolTipService.ToolTip="打开表格" FontFamily="Assets/Segoe Fluent Icons.ttf#Segoe Fluent Icons" Foreground="{ThemeResource SystemFillColorNeutralBrush}"                                ></HyperlinkButton>
+                        <HyperlinkButton x:ConnectionId='14' Grid.Column="6" Tag="{Binding Path=Index}" Content="&#xe712;" ToolTipService.ToolTip="详细信息" FontFamily="Assets/Segoe Fluent Icons.ttf#Segoe Fluent Icons" Foreground="{ThemeResource SystemFillColorNeutralBrush}"                                ></HyperlinkButton>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--<controls:DataGrid x:Name="dgResults" CornerRadius="6" ItemsSource="{Binding}" BorderThickness="1" BorderBrush="{ThemeResource SystemControlBackgroundBaseLowBrush}"
+                           AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="True"
+                           CanUserSortColumns="False" HeadersVisibility="Column" ColumnHeaderHeight="32" RowHeight="40"
+                           HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" GridLinesVisibility="None"
+                           AlternatingRowBackground="#48000000" FrozenColumnCount="3">
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn Header="表格" Binding="{Binding FileName}" Width="*" MaxWidth="320"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="行" Binding="{Binding LineNo}" Width="*" MaxWidth="320"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="序号/ID" Binding="{Binding ID}" Width="*" MaxWidth="320"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="简中/zh-CN" Binding="{Binding zh_CN}" Width="*" MaxWidth="320"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="英文/en" Binding="{Binding en}" Width="*" MaxWidth="320"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="繁中/zh-TW" Binding="{Binding zh_TW}" Width="*" MaxWidth="320"></controls:DataGridTextColumn>
+              <controls:DataGridTextColumn Header="葡语/pt" Binding="{Binding pt}" Width="*" MaxWidth="320"></controls:DataGridTextColumn>
+              <controls:DataGridTextColumn Header="法语/fr" Binding="{Binding fr}" Width="*" MaxWidth="320"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="" Width="40"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="" Width="40"></controls:DataGridTextColumn>
+            </controls:DataGrid.Columns>
+          <controls:DataGrid.ColumnHeaderStyle>
+            <Style TargetType="primitives:DataGridColumnHeader">
+              <Setter Property="Template">
+                  <Setter.Value>
+                      <ControlTemplate TargetType="primitives:DataGridColumnHeader">
+                          <ContentPresenter Background="Transparent" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="12,0"/>
+                      </ControlTemplate>
+                  </Setter.Value>
+              </Setter>
+            </Style>
+          </controls:DataGrid.ColumnHeaderStyle>
+        </controls:DataGrid>-->
+      </Grid>
+      <TextBlock x:ConnectionId='2' x:Name="tbqueryCount" Grid.Row="2" VerticalAlignment="Bottom" Margin="20,0" HorizontalAlignment="Left" Foreground="Gray"></TextBlock>
+      <TextBlock x:ConnectionId='3' x:Name="tbTotalCount" Grid.Row="2" VerticalAlignment="Bottom" Margin="48,0" HorizontalAlignment="Right" Foreground="Gray"></TextBlock>
+      <Button x:ConnectionId='4' Grid.Row="2" Width="20" Height="20" Padding="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20,0" ToolTipService.ToolTip="重新加载多语言表"                             >
+        <FontIcon FontFamily="Assets/Segoe Fluent Icons.ttf#Segoe Fluent Icons" Glyph="&#xe895;" FontSize="12" Foreground="{ThemeResource SystemFillColorNeutralBrush}"/>
+      </Button>
+
+      <TeachingTip x:ConnectionId='5' Grid.Row="1" x:Name="tipDetail" IsLightDismissEnabled="True" PreferredPlacement="Left" ActionButtonContent="打开表格" IsOpen="False" ActionButtonStyle="{StaticResource AccentButtonStyle}"                                                  >
+          <TeachingTip.Content>
+              <StackPanel Margin="0,10" Spacing="4" Background="Transparent">
+                  <TextBlock Text="简中/zh-CN" Foreground="Gray" FontSize="12" FontWeight="Bold"></TextBlock>
+                  <TextBlock x:ConnectionId='6' Margin="0,0,0,10" x:Name="tbLanguage1" IsTextSelectionEnabled="True" TextWrapping="Wrap"></TextBlock>
+                  <TextBlock Text="英文/en" Foreground="Gray" FontSize="12" FontWeight="Bold"></TextBlock>
+                  <TextBlock x:ConnectionId='7' Margin="0,0,0,10" x:Name="tbLanguage2" IsTextSelectionEnabled="True" TextWrapping="Wrap"></TextBlock>
+                  <TextBlock Text="繁中/zh-TW" Foreground="Gray" FontSize="12" FontWeight="Bold"></TextBlock>
+                  <TextBlock x:ConnectionId='8' Margin="0,0,0,10" x:Name="tbLanguage3" IsTextSelectionEnabled="True" TextWrapping="Wrap"></TextBlock>
+                  <TextBlock Text="葡语/pt" Foreground="Gray" FontSize="12" FontWeight="Bold"></TextBlock>
+                  <TextBlock x:ConnectionId='9' Margin="0,0,0,10" x:Name="tbLanguage4" IsTextSelectionEnabled="True" TextWrapping="Wrap"></TextBlock>
+                  <TextBlock Text="法语/fr" Foreground="Gray" FontSize="12" FontWeight="Bold"></TextBlock>
+                  <TextBlock x:ConnectionId='10' Margin="0,0,0,10" x:Name="tbLanguage5" IsTextSelectionEnabled="True" TextWrapping="Wrap"></TextBlock>
+              </StackPanel>
+          </TeachingTip.Content>
+      </TeachingTip>
+    </Grid>
+</Page>
+

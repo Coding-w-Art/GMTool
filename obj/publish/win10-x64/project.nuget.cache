@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "Nz3R04tzPk8quVp0HpxePKrDR5lP9WgYMWD+MjLqzz3TjBgTU8ED0Sg+PkRka7/olJi8ez8L6XE9aBnhGMYqVQ==",
+  "success": true,
+  "projectFilePath": "G:\\GrandMaisonHRG\\Tools\\GMTool\\GMTool.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.1\\microsoft.windows.sdk.buildtools.10.0.22621.1.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.windowsappsdk\\1.1.2\\microsoft.windowsappsdk.1.1.2.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\tomlyn\\0.15.0\\tomlyn.0.15.0.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\winuiex\\1.7.0\\winuiex.1.7.0.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.6\\microsoft.netcore.app.runtime.win-x64.6.0.6.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.6\\microsoft.netcore.app.runtime.win-x86.6.0.6.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\6.0.6\\microsoft.netcore.app.runtime.win-arm64.6.0.6.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.6\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.6.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.6\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.6.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-arm64\\6.0.6\\microsoft.windowsdesktop.app.runtime.win-arm64.6.0.6.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.6\\microsoft.aspnetcore.app.runtime.win-x64.6.0.6.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.6\\microsoft.aspnetcore.app.runtime.win-x86.6.0.6.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\6.0.6\\microsoft.aspnetcore.app.runtime.win-arm64.6.0.6.nupkg.sha512",
+    "C:\\Users\\Weiyusong\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.25\\microsoft.windows.sdk.net.ref.10.0.19041.25.nupkg.sha512"
+  ],
+  "logs": []
+}

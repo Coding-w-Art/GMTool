@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "GMTool (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "GMTool (Unpackaged)": {
+      "commandName": "Project",
+      "jsWebView2Debugging": false
+    }
+  }
+}

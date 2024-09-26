@@ -1,0 +1,1113 @@
+[Resource]
+title = "资源"
+
+[Resource.addRes]
+title = "添加资源"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ERewardNormalType", title = "资源类型", source = "CfgResource", range = "ID", desc = "NameLanguageKey" },
+  { name = "count", title = "数量" },
+]
+
+[Resource.addMoney]
+title = "添加宝石"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "count", title = "数量", default = "1000000" },
+]
+
+[Resource.addFood]
+title = "添加物资"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "foodID", title = "物资ID", source = "CfgFood", range = "ID", desc = "NameLanguageKey", default = "1001" },
+  { name = "count", title = "数量", default = "100000" },
+]
+
+[Resource.resetFood]
+title = "重置物资"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Resource.addBatchRes]
+title = "批量添加资源"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Resource.clearNormalRes]
+title = "清空普通资源"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Resource.addValue]
+title = "增加资源"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ERewardGroup", title = "资源类型", source = "CfgRewardGroup", range = "ID", desc = "DescLanguageKey" },
+  { name = "id", title = "ID" },
+  { name = "count", title = "数量" },
+]
+
+[Resource.deductValue]
+title = "扣除资源"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ERewardGroup", title = "资源类型", source = "CfgRewardGroup", range = "ID", desc = "DescLanguageKey" },
+  { name = "id", title = "ID" },
+  { name = "count", title = "数量" },
+]
+
+[Resource.setValue]
+title = "设置资源数量"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ERewardGroup", title = "资源类型", source = "CfgRewardGroup", range = "ID", desc = "DescLanguageKey" },
+  { name = "id", title = "ID" },
+  { name = "count", title = "数量" },
+]
+
+[Resource.getValue]
+title = "获取资源数量"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ERewardGroup", title = "资源类型", source = "CfgRewardGroup", range = "ID", desc = "DescLanguageKey" },
+  { name = "id", title = "ID" },
+]
+
+[Item]
+title = "道具"
+
+[Item.addItem]
+title = "添加道具"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Item.ID", title = "道具ID", source = "CfgItem", range = "ID", desc = "NameLanguageKey" },
+  { name = "count", title = "数量" },
+]
+
+[Item.addItems]
+title = "添加道具"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "start", title = "起始道具ID", source = "CfgItem", range = "ID", desc = "NameLanguageKey" },
+  { name = "end", title = "结束道具ID", source = "CfgItem", range = "ID", desc = "NameLanguageKey" },
+  { name = "count", title = "数量" },
+]
+
+[Item.clearItem]
+title = "清空道具"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Item.recruitDropHit]
+title = "掉落包模拟"
+params = [
+  { name = "DrpoBag.ID", title = "掉落包ID", source = "CfgDropBag", range = "ID" },
+  { name = "count", title = "次数" },
+]
+
+[Chef]
+title = "厨师"
+
+[Chef.addHero]
+title = "增加厨师"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Chef.ID", title = "厨师ID", source = "CfgChef", range = "ID", desc = "NameLanguageKey" },
+  { name = "count", title = "数量", default = "1" },
+]
+
+[Chef.addChefStar]
+title = "厨师升星(加1星)"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Chef.ID", title = "厨师ID", source = "CfgChef", range = "ID", desc = "NameLanguageKey" },
+]
+
+[Chef.setTalentNodeLevel]
+title = "设置厨师天赋节点等级"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Chef.ID", title = "厨师ID", source = "CfgChef", range = "ID", desc = "NameLanguageKey" },
+  { name = "TalentNode.ID", title = "天赋节点ID", source = "CfgTalentNode", range = "ID", desc = "Name" },
+  { name = "level", title = "等级" },
+]
+
+[Chef.clearHero]
+title = "清空厨师"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Chef.setChefLevel]
+title = "设置厨师等级"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Chef.ID", title = "厨师ID，0为全部厨师", source = "CfgChef", range = "ID", desc = "NameLanguageKey" },
+  { name = "level", title = "等级" },
+]
+
+[Chef.queryChefAttr]
+title = "查询厨师属性"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Chef.ID", title = "厨师ID", source = "CfgChef", range = "ID", desc = "NameLanguageKey" },
+]
+
+[Chef.recruitChef]
+title = "厨师招募概率模拟"
+params = [
+  { name = "recruitType", title = "招募类型", options = [
+    { value = "1", title = "普通招募" },
+    { value = "2", title = "高级招募" },
+  ]},
+  { name = "count", title = "次数" },
+]
+
+[Chef.recruitChefHit]
+title = "厨师招募保底模拟"
+params = [
+  { name = "recruitType", title = "招募类型", options = [
+    { value = "1", title = "普通招募" },
+    { value = "2", title = "高级招募" },
+  ]},
+  { name = "count", title = "次数" },
+]
+
+[Chef.recruitClear]
+title = "清除玩家保底"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Chef.recruitShow]
+title = "招募保底展示"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Recipe]
+title = "菜谱"
+
+[Recipe.addRecipe]
+title = "添加菜谱 "
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Recipe.ID", title = "菜谱ID", source = "CfgRecipe", range = "ID", desc = "Name" },
+  { name = "count", title = "数量", default = "1" },
+]
+
+[Recipe.activateAllRecipe]
+title = "激活所有菜谱为可用"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Recipe.recipeLevelUp]
+title = "菜谱升级"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Recipe.ID", title = "菜谱ID", source = "CfgRecipe", range = "ID", desc = "Name" },
+]
+
+[Recipe.recipeStarUp]
+title = "菜谱升星"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Recipe.ID", title = "菜谱ID", source = "CfgRecipe", range = "ID", desc = "Name" },
+  { name = "exp", title = "经验值" },
+]
+
+[Recipe.queryRecipeActivateInfo]
+title = "查询菜谱激活数据"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Recipe.ID", title = "菜谱ID", source = "CfgRecipe", range = "ID", desc = "Name" },
+  { name = "Chef.ID", title = "厨师ID", source = "CfgChef", range = "ID", desc = "NameLanguageKey" },
+]
+
+
+[InnerBuilding]
+title = "内城"
+
+[InnerBuilding.setInnerBuildingLv]
+title = "设置内城建筑等级"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "InnerBuildingType.ID", title = "建筑类型", source = "CfgInnerBuildingType", range = "ID", desc = "NameLanguageKey" },
+  { name = "level", title = "等级" },
+]
+
+[InnerBuilding.setIBLevel]
+title = "一键升级内城建筑"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "level", title = "等级" },
+]
+
+[World]
+title = "大地图"
+
+[World.addBatchPlayerBuilding]
+title = "批量创建玩家城"
+params = [
+  { name = "count", title = "建筑数量" },
+]
+
+[World.buildBuilding]
+title = "建造建筑"
+params = [
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+  { name = "Building.ID", title = "建筑ID", source = "CfgBuilding", range = "ID", desc = "NameLanguageKey" },
+  { name = "pid", title = "设置归属为角色所在联盟" },
+]
+
+[World.createBuilding]
+title = "创建建筑"
+params = [
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+  { name = "Building.ID", title = "建筑ID", source = "CfgBuilding", range = "ID", desc = "NameLanguageKey" },
+]
+
+[World.deleteBuilding]
+title = "删除建筑"
+params = [
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+]
+
+[World.legionTakeBuilding]
+title = "设置建筑归属"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+]
+
+[World.doOccupy]
+title = "占领商圈"
+params = [
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+  { name = "pid", title = "角色ID" },
+]
+
+[World.setBuildingPopularity]
+title = "设置人气值"
+params = [
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+  { name = "popularity", title = "人气值" },
+]
+
+[World.takeAllGate]
+title = "占领所有关卡(玩家所在商会)"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[World.clearBuilding]
+title = "按类型清理建筑"
+params = [
+  { name = "building type", title = "建筑类型", source = "CfgBuilding", range="Type", desc="TypeLanguageType" },
+]
+
+[World.clearWorld]
+title = "清理大地图建筑数据"
+params = [
+  { name = "pid", title = "保留玩家的建筑" },
+]
+
+[World.getOccupyBuildingState]
+title = "获取建筑状态（商圈/关卡）"
+params = [
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+]
+
+[World.resetOccupyBuildingFirstOccupy]
+title = "重置建筑为未被首占状态（商圈/关卡）"
+params = [
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+]
+
+[World.queryMap]
+title = "查询地图概要数据"
+params = [
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+  { name = "areaType", title = "区域类型", options = [
+    { value = "1", title = "设计分区" },
+    { value = "2", title = "资源分区" },
+  ]},
+]
+
+[World.setBuildingState]
+title = "设置建筑状态。已废弃"
+params = [
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+  { name = "state", title = "建筑状态" },
+]
+
+[World.setBuildingFade]
+title = "设置玩家主城为衰败状态"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[World.relocate]
+title = "迁城"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+]
+
+[World.isTheFogOpen]
+title = "玩家迷雾是否解锁 "
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "x", title = "X坐标" },
+  { name = "y", title = "Y坐标" },
+]
+
+[World.openAllFog]
+title = "解锁个人全部迷雾（使用会卡顿几秒）"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[World.closeAllFog]
+title = "恢复个人全部迷雾（需要重新登陆）"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[World.queryFogRange]
+title = "查询建筑迷雾解锁范围"
+params = [
+  { name = "x", title = "建筑X坐标" },
+  { name = "y", title = "建筑Y坐标" },
+  { name = "size", title = "建筑视野大小" },
+]
+
+[World.accelerateArmyMarch]
+title = "行军加速"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "slotID", title = "槽位ID", default = "1" },
+]
+
+[World.queryBuilding]
+title = "查询建筑"
+params = [
+  { name = "x", title = "建筑X坐标" },
+  { name = "y", title = "建筑Y坐标" },
+]
+
+[World.checkWorldEmptyPos]
+title = "检查大地图空位置"
+params = [
+]
+
+[Task]
+title = "任务"
+
+[Task.setTaskState]
+title = "设置任务状态"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Task.ID", title = "任务ID", source = "CfgTask", range = "ID", desc = "NameLanguageKey" },
+  { name = "ETaskState", title = "状态", default = "3", options = [
+    { value = "1", title = "进行中" },
+    { value = "3", title = "完成可领奖" },
+    { value = "4", title = "提交任务" },
+  ] },
+]
+
+[Task.submitSeriesTask]
+title = "提交一系列任务"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "startAcceptID", title = "开始acceptID", source = "CfgTask", range = "ID", desc = "NameLanguageKey" },
+  { name = "endAcceptID", title = "结束acceptID", source = "CfgTask", range = "ID", desc = "NameLanguageKey" },
+]
+
+[Activity]
+title = "活动"
+
+# [Activity.queryAllCfgActivityInfo]
+# title = "查询所有活动配置信息"
+# params = [
+#   { name = "pid", title = "角色ID" },
+# ]
+
+# [Activity.queryActivities]
+# title = "查询玩家所有活动数据"
+# params = [
+#   { name = "pid", title = "角色ID" },
+# ]
+
+[Activity.queryActivityGroup]
+title = "查询活动组配置信息"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "tplID", title = "活动组模板ID" },
+]
+
+[Activity.queryActivity]
+title = "查询活动配置数据"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "activityID", title = "活动ID" },
+]
+
+[Activity.queryActivityData]
+title = "查询玩家活动数据"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "activityID", title = "活动ID" },
+]
+
+[Activity.resetActivities]
+title = "重置玩家所有活动数据"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Activity.queryActivityRank]
+title = "查询活动排行榜信息"
+params = [
+  { name = "ActivityID", title = "活动ID"},
+]
+
+[Activity.queryToplist]
+title = "查询全服排行榜榜单"
+params = [
+  { name = "rankType", title = "排行榜类型", source = "CfgTopList", range = "ID", desc = "RankName" },
+  { name = "rankID", title = "排行榜ID"},
+  { name = "rankVersion", default = "0", title = "排行榜版本号"},
+]
+
+[Activity.queryLegionToplist]
+title = "查询商会排行榜榜单"
+params = [
+  { name = "rankType", title = "排行榜类型", source = "CfgTopList", range = "ID", desc = "RankName" },
+  { name = "rankID", title = "排行榜ID"},
+  { name = "rankVersion", default = "0", title = "排行榜版本号"},
+]
+
+[Activity.addActivityScore]
+title = "添加活动积分"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ActivityID", title = "活动ID"},
+  { name = "value", title = "积分"},
+]
+
+[Activity.getActivityScore]
+title = "查询玩家活动积分"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ActivityID", title = "活动ID"},
+]
+
+[Activity.setActivityContentProgress]
+title = "设置活动任务进度"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ActivityID", title = "活动ID"},
+  { name = "index", title = "第几个任务"},
+  { name = "value", title = "进度值"},
+]
+
+[Activity.setActivityContentRewarded]
+title = "设置活动任务领奖状态"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ActivityID", title = "活动ID"},
+  { name = "index", title = "第几个任务"},
+  { name = "flag", title = "领奖状态", options = [
+    { value = "0", title = "未领奖" },
+    { value = "1", title = "已领奖" },
+  ] },
+]
+
+[Activity.setActivityState]
+title = "设置活动状态"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "ActivityID", title = "活动ID"},
+  { name = "state", title = "状态", options = [
+    { value = "0", title = "初始状态" },
+    { value = "1", title = "开启" },
+    { value = "3", title = "结束" },
+  ] },
+]
+
+[Activity.closeActivity]
+title = "关闭全服活动"
+params = [
+  { name = "ActivityID", title = "活动ID"},
+]
+
+[Activity.queryServerActivityData]
+title = "查询View服活动数据"
+params = [
+]
+
+[Activity.resetServerClosedActivity]
+title = "重置全服已关闭的活动"
+params = [
+]
+
+[Player]
+title = "角色"
+
+[Player.superPlayer]
+title = "设置超级角色"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Player.triggerConditions]
+title = "触发玩家条件"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "condID", title = "条件ID" },
+  { name = "delta", title = "进度值", default = "1" },
+]
+
+[Player.queryPlayerEffect]
+title = "查询玩家效果"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "effectFilter", title = "效果过滤器ID" },
+  { name = "ERewardGroup", title = "资源类型", source = "CfgRewardGroup", range = "ID", desc = "DescLanguageKey" },
+  { name = "id", title = "ID" },
+]
+
+[Player.setCityRatingLevel]
+title = "设置餐厅星级"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "level", title = "星级", source = "CfgCityRating", range = "Level", desc = "CityRatingNameLanguageKey" },
+]
+
+[Player.queryPlayer]
+title = "查询玩家信息"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Player.openAllModule]
+title = "所有功能开启"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Player.openModule]
+title = "打开指定模块"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "moduleType", title = "模块枚举", source = "CfgModuleOpen", range = "ModuleType", desc = "ShowText" },
+]
+
+[Player.closeModule]
+title = "关闭指定模块"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "moduleType", title = "模块枚举", source = "CfgModuleOpen", range = "ModuleType", desc = "ShowText" },
+]
+
+[Player.setGuideDone]
+title = "设置新手引导记录"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "step1", title = "大步骤", source = "CfgNewbieGuide", range = "Step" },
+  { name = "step2", title = "小步骤" },
+]
+
+[Player.setGuideDoneByRange]
+title = "设置新手引导记录"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "BeginStep", title = "起始步骤", source = "CfgNewbieGuide", range = "Step" },
+  { name = "EndStep", title = "结束步骤", source = "CfgNewbieGuide", range = "Step" },
+  { name = "progress", title = "进度", options = [
+    { value = "-1", title = "完成" },
+    { value = "0", title = "未完成" },
+  ]},
+]
+
+[Player.rebornPlayer]
+title = "重置玩家数据"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Player.setArmyBack]
+title = "撤退部队"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "slotID", title = "部队槽位ID" },
+]
+
+[Player.resetMilestone]
+title = "重置里程碑"
+
+[Player.clearMilestone]
+title = "清空里程碑(慎用！！！会删除大地图所有建筑)"
+
+[Player.setMilestoneState]
+title = "设置里程碑状态"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "milestoneID", title = "里程碑ID" },
+  { name = "state", title = "状态 (0,1,2)", options = [
+    { value = "0", title = "未达成" },
+    { value = "1", title = "已达成" },
+    { value = "2", title = "已领取" },
+  ]},
+]
+
+[Player.setMilestoneProgress]
+title = "设置里程碑进度"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "milestoneID", title = "里程碑ID" },
+  { name = "progress", title = "进度" },
+]
+
+[Player.transMilestone]
+title = "开启下个里程碑"
+
+[Player.setDramaState]
+title = "设置剧情状态"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Drama.ID", title = "剧情ID", source = "CfgDrama", range = "ID", desc = "NameLanguageKey" },
+  { name = "ETaskState", title = "状态" },
+]
+
+[Player.addCustomerExp]
+title = "增加顾客经验值"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "customerID", title = "顾客ID"},
+  { name = "exp", title = "经验值"},
+]
+
+[Player.addCityRatingGmScore]
+title = "添加餐厅星级Gm评分"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "RatingType", title = "评分类型 (1,2,3)", source = "CfgCityRatingType", range = "ID", desc = "CfgRatingTypeNameKey" },
+  { name = "gmScore", title = "评分" },
+]
+
+[Player.resetCityRatingGmScore]
+title = "重置餐厅星级Gm评分"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "RatingType", title = "评分类型 (1,2,3)", source = "CfgCityRatingType", range = "ID", desc = "CfgRatingTypeNameKey" },
+]
+
+[Player.resetBusinessEvent]
+title = "重置经营事件"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Player.unlockAllDungeonPass]
+title = "解锁所有副本"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Player.finishDungeonPass]
+title = "完成副本"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "passID", title = "关卡ID" },
+  { name = "param", title = "参数，0:指定关卡，1:所有关卡，-1：passId及之前关卡" },
+]
+
+[Player.becomeHighRoller]
+title = "一键大号"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Player.refreshPlayerKitchen]
+title = "刷新玩家后厨数据"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Player.refreshPlotEvent]
+title = "刷新剧情事件"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Player.addPlotExp]
+title = "增加剧情经验"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "exp", title = "经验值" },
+]
+
+[Player.rename]
+title = "玩家改名"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "new name", title = "新名字" },
+]
+
+[Player.setTechnologyLv]
+title = "设置科技等级"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Technology.ID", title = "科技ID", source = "CfgTechnology", range = "ID", desc = "NameLanguageKey" },
+  { name = "level", title = "等级" },
+]
+
+[Player.satisfyTechnologyLv]
+title = "设置科技等级"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Technology.ID", title = "科技ID", source = "CfgTechnology", range = "ID", desc = "NameLanguageKey" },
+  { name = "level", title = "等级" },
+]
+
+[Player.unlockTechnology]
+title = "解锁科技等级"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "start", title = "起始科技ID", source = "CfgTechnology", range = "ID", desc = "NameLanguageKey" },
+  { name = "end", title = "结束科技ID", source = "CfgTechnology", range = "ID", desc = "NameLanguageKey" },
+]
+
+[Player.clearTradeSlot]
+title = "清除交易槽位"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "saleType", title = "交易类型" },
+  { name = "slotID", title = "槽位ID" },
+]
+
+[Legion]
+title = "商会"
+
+[Legion.setLegionTechnologyLv]
+title = "设置商会科技等级"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "techID", title = "科技ID", source = "CfgTechnology", range = "ID", desc = "NameLanguageKey" },
+  { name = "level", title = "等级" },
+]
+
+# [Legion.legion]
+# title = "联盟相关命令"
+# params = [
+#   { name = "pid", title = "角色ID" },
+#   { name = "legion id", title = "商会ID" },
+#   { name = "cmd", title = "命令" },
+#   { name = "param", title = "参数" },
+# ]
+
+[Legion.legionInfo]
+title = "查询联盟相关信息"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "legion id", title = "商会ID" },
+  { name = "cmd", title = "命令" },
+  { name = "param", title = "参数" },
+]
+
+[Legion.queryLegion]
+title = "查询玩家商会ID"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Legion.takeAllGate]
+title = "占领所有关卡(玩家所在商会)"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Legion.queryLegionProfitResSpeed]
+title = "查询领地工资获取速度"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Mail]
+title = "邮件"
+
+[Mail.setMailLifeTime]
+title = "设置邮件过期时间"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "time", title = "过期时间", default = "99999999" },
+]
+
+[Mail.queryPlayerMail]
+title = "查询玩家邮件"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Mail.sendStaticMail]
+title = "发送表格邮件(json)"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Mail.ID", title = "邮件ID", source = "CfgMail", range = "ID", desc = "NameLanguageKey" },
+  { name = "rewards", title = "奖励" },
+  { name = "params", title = "参数" },
+]
+
+[Friend]
+title = "好友"
+
+[Friend.addFriend]
+title = "成为好友"
+params = [
+  { name = "pid", title = "角色ID 1" },
+  { name = "pid", title = "角色ID 2" },
+]
+
+[Friend.addFriendApply]
+title = "发送好友申请"
+params = [
+  { name = "pid", title = "接收者角色ID" },
+  { name = "pid", title = "发送者角色ID" },
+]
+
+[Friend.processFriendApply]
+title = "处理好友申请"
+params = [
+  { name = "pid", title = "接收者角色ID" },
+  { name = "pid", title = "发送者角色ID" },
+]
+
+[Friend.removeFriend]
+title = "删除好友"
+params = [
+  { name = "pid", title = "角色ID 1" },
+  { name = "pid", title = "角色ID 2" },
+]
+
+[Misc]
+title = "其他"
+
+[Misc.setAllPrivateServerTime]
+title = "设置所有私服当前时间 (重启重置,不可回调)"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "date", title = "日期" },
+  { name = "hh", title = "时", default = "0" },
+  { name = "mm", title = "分", default = "0" },
+  { name = "ss", title = "秒", default = "0" },
+]
+
+[Misc.setAllPrivateServerOpenTime]
+title = "设置所有私服开服时间 (重启重置)"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "date", title = "日期" },
+  { name = "hh", title = "时", default = "0" },
+  { name = "mm", title = "分", default = "0" },
+  { name = "ss", title = "秒", default = "0" },
+]
+
+[Misc.queryGameServerInfo]
+title = "查询游戏服信息"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Misc.queryGameServerTime]
+title = "查询游戏服当前时间"
+params = [
+  { name = "pid", title = "角色ID" },
+]
+
+[Misc.customMsg]
+title = "发送自定义消息"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "MsgType", title = "消息类型" },
+  { name = "content", title = "消息内容" },
+]
+
+[Misc.setAllDebugMode]
+title = "设置调试模式"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "IsDebugMode", title = "调试模式", default = "1" },
+]
+
+[Misc.queryOnline]
+title = "查询在线人数"
+
+[Misc.hotReload]
+title = "热加载"
+
+[Misc.notice]
+title = "公告"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Notice.ID", title = "公告ID", source = "CfgNotice", range = "ID", desc = "NameLanguageKey" },
+  { name = "param", title = "参数" },
+]
+
+[Misc.noticeLegion]
+title = "商会公告"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "Notice.ID", title = "公告ID", source = "CfgNotice", range = "ID", desc = "NameLanguageKey" },
+  { name = "param", title = "参数" },
+]
+
+[Misc.battleLogOpen]
+title = "剧情战斗日志开关"
+params = [
+  { name = "status", title = "开关", options = [
+    {value = "0", title = "关"},
+    {value = "1", title = "开"},
+  ]},
+]
+
+[Misc.viewBattleLogOpen]
+title = "大地图战斗日志开关"
+params = [
+  { name = "status", title = "开关", options = [
+    {value = "0", title = "关"},
+    {value = "1", title = "开"},
+  ]},
+]
+
+[Misc.addBanPlayerChat]
+title = "禁言玩家"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "chat type", title = "聊天频道类型(0-4)", options = [
+    {value = "0", title = "所有频道"},
+    {value = "1", title = "跨服频道"},
+    {value = "2", title = "全服频道"},
+    {value = "3", title = "商会频道"},
+    {value = "4", title = "私聊频道"},
+  ]},
+  { name = "seconds", title = "禁言秒数" },
+]
+
+[Misc.removeBanPlayerChat]
+title = "解除玩家禁言"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "chat type", title = "聊天频道类型", options = [
+    {value = "0", title = "所有频道"},
+    {value = "1", title = "跨服频道"},
+    {value = "2", title = "全服频道"},
+    {value = "3", title = "商会频道"},
+    {value = "4", title = "私聊频道"},
+  ]},
+]
+
+[Misc.cleanChat]
+title = "清理聊天记录"
+params = [
+  { name = "chat type", title = "聊天频道类型", options = [
+    {value = "1", title = "跨服频道"},
+    {value = "2", title = "全服频道"},
+    {value = "3", title = "商会频道"},
+    {value = "4", title = "私聊频道"},
+  ]},
+  { name = "from id", title = "角色ID或商会id" },
+  { name = "to id", title = "私聊对方ID" },
+  { name = "date", title = "开始日期" },
+  { name = "hh", title = "开始,时" },
+  { name = "mm", title = "开始,分" },
+  { name = "ss", title = "开始,秒" },
+  { name = "date", title = "结束日期" },
+  { name = "hh", title = "结束,时" },
+  { name = "mm", title = "结束,分" },
+  { name = "ss", title = "结束,秒" },
+]
+
+[Misc.runBatchCmd]
+title = "批量执行GM命令"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "command group", title = "分组", options = [
+    { value = "100005", title = "分组" },
+  ] },
+]
+
+[Misc.forceUpdateClient]
+title = "客户端强制热更"
+params = [
+  { name = "resVersion", title = "资源版本号" },
+  { name = "codeVersion", title = "代码版本号" },
+]
+
+[Misc.setGameServerTime]
+title = "设置游戏服当前时间 (重启重置,不可回调)"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "date", title = "日期" },
+  { name = "hh", title = "时", default = "0" },
+  { name = "mm", title = "分", default = "0" },
+  { name = "ss", title = "秒", default = "0" },
+]
+
+[Misc.setViewServerTime]
+title = "设置View服当前时间 (重启重置,不可回调)"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "date", title = "日期" },
+  { name = "hh", title = "时", default = "0" },
+  { name = "mm", title = "分", default = "0" },
+  { name = "ss", title = "秒", default = "0" },
+]
+
+[Misc.setAllServerTime]
+title = "设置所有服当前时间 (重启重置,不可回调。慎用，请使用setAllPrivateServerTime)"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "date", title = "日期" },
+  { name = "hh", title = "时", default = "0" },
+  { name = "mm", title = "分", default = "0" },
+  { name = "ss", title = "秒", default = "0" },
+]
+
+[Misc.setServerOpenTime2Game]
+title = "设置game服开服时间 (重启重置)"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "date", title = "日期" },
+  { name = "hh", title = "时", default = "0" },
+  { name = "mm", title = "分", default = "0" },
+  { name = "ss", title = "秒", default = "0" },
+]
+
+[Misc.setAllServerOpenTime]
+title = "设置所有服开服时间 (重启重置。慎用，请使用setAllPrivateServerOpenTime)"
+params = [
+  { name = "pid", title = "角色ID" },
+  { name = "date", title = "日期" },
+  { name = "hh", title = "时", default = "0" },
+  { name = "mm", title = "分", default = "0" },
+  { name = "ss", title = "秒", default = "0" },
+]

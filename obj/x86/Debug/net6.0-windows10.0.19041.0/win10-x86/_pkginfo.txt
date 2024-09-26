@@ -1,0 +1,1 @@
+C:\Projects\GrandMaisonHRG\Tools\GMTool\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppPackages\GMTool_1.0.0.0_x86_Debug_Test\GMTool_1.0.0.0_x86_Debug.msix
